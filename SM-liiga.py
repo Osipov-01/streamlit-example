@@ -4,7 +4,7 @@ import streamlit as st
 #data = pd.read_csv('C:/Users/User/Desktop/SM-liiga/SM-liiga.csv', encoding='cp1251', sep=';')
 
 st.subheader('Input xlsx file')
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a xlsx file")
 
 if uploaded_file is not None:
     data = pd.read_excel(uploaded_file)
