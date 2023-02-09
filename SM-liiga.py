@@ -3,7 +3,7 @@ import streamlit as st
 
 #data = pd.read_csv('C:/Users/User/Desktop/SM-liiga/SM-liiga.csv', encoding='cp1251', sep=';')
 
-a,b = st.multi_slider("Select Price Range:", 1, 16, step = 1)
+a,b = st.slider("Select Price Range:", 1, 16, step = 1)
 
 st.subheader('Input xlsx file')
 uploaded_file = st.file_uploader("Choose a file")
