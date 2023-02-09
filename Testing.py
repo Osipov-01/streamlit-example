@@ -258,7 +258,7 @@ if (mkrf_movies_file is not None) and (mkrf_shows_file is not None):
     )
     print(table)
     table.plot(style='-o', grid=True, figsize = (12,8))
-    st.line_chart(table)
+    st.bar_chart(table)
     plt.show()
 
     mkrf_movies_support = mkrf_movies.query('financing_source != "Частный"')
