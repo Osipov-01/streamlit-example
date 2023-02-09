@@ -3,7 +3,7 @@ import streamlit as st
 
 #data = pd.read_csv('C:/Users/User/Desktop/SM-liiga/SM-liiga.csv', encoding='cp1251', sep=';')
 
-a,b = st.slider("Select Price Range:", 1, 16, step = 1)
+a = st.slider("Select Price Range:", 1, 16, step = 1)
 
 st.subheader('Input xlsx file')
 uploaded_file = st.file_uploader("Choose a file")
@@ -25,7 +25,7 @@ if uploaded_file is not None:
 #data1 = pd.read_excel(C:/Users/User/Desktop/SM-liiga/SM-liiga.xlsx'')
                                                                                              
 
-    st.dataframe(data[a:b])
+    st.dataframe(data.head(a))
     print(data.columns)
     #st.table(data.columns)
 
