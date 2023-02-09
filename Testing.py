@@ -9,8 +9,13 @@ st.title("Hello")
 pd.options.display.float_format = '{:,.1f}'.format
 
 #читаем 2 датасета
-mkrf_movies = pd.read_csv('E:/МИИТ/Диплом pandas python/mkrf_movies.csv')
-mkrf_shows = pd.read_csv('E:/МИИТ/Диплом pandas python/mkrf_shows.csv')
+uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+
+mkrf_movies = uploaded_files[0]
+mkrf_shows = uploaded_files[1]
+
+#mkrf_movies = pd.read_csv('E:/МИИТ/Диплом pandas python/mkrf_movies.csv')
+#mkrf_shows = pd.read_csv('E:/МИИТ/Диплом pandas python/mkrf_shows.csv')
 
 print(mkrf_movies.info())
 print(mkrf_shows.info())
