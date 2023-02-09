@@ -1,6 +1,6 @@
 import pandas as pd
 import random as rd #импорт библиотеки случайных чисел
-import matplotlib.pyplot as plt #отображение графиков
+#import matplotlib.pyplot as plt #отображение графиков
 import streamlit as st
 import numpy as np
 
@@ -229,21 +229,21 @@ st.write(mkrf_movies)
 
 print(mkrf_movies.query('box_office != -1').groupby('show_start_date_year')['title'].count())
 mkrf_movies.query('box_office != -1').groupby('show_start_date_year')['title'].count().plot(style='-o', grid=True)
-plt.show()
+#plt.show()
 
 
 
 print(mkrf_movies.query('box_office != -1').groupby('show_start_date_year')['box_office'].sum())
 (mkrf_movies.query('box_office != -1').groupby('show_start_date_year')['box_office']
  .sum().plot(style='-o', grid=True, figsize=(12,8)))
-plt.show()
+#plt.show()
 
 
 table = mkrf_movies.query('box_office != -1').pivot_table(values='box_office', index='show_start_date_year', aggfunc=[np.mean, np.median])
 st.write(table)
 table.plot(style='-o', grid=True)
 st.line_chart(table)
-plt.show()
+#plt.show()
 
 table = ( mkrf_movies.query('show_start_date_year >= 2015 and box_office != -1')
  .pivot_table(values='box_office', index='show_start_date_year', columns='age_restriction', aggfunc=[np.sum])
@@ -251,7 +251,7 @@ table = ( mkrf_movies.query('show_start_date_year >= 2015 and box_office != -1')
 print(table)
 table.plot(style='-o', grid=True, figsize = (12,8))
 st.line_chart(table)
-plt.show()
+#plt.show()
 
 mkrf_movies_support = mkrf_movies.query('financing_source != "Частный"')
 #Столбец - (абсолютная) оккупаемость фильма
@@ -282,12 +282,12 @@ mkrf_movies_support_new = mkrf_movies_support[['title','profit']].head(10).reset
 st.bar_chart(mkrf_movies_support_new, x='title', y='profit')
 
 
-plt.show()
+#plt.show()
 mkrf_movies_support = mkrf_movies_support.sort_values(by='relational_profit', ascending=False)
 (mkrf_movies_support[['title','relational_profit']].head(10).reset_index()
  .plot(title = 'Рейтинг окупаемости фильмов по относительным показателям', x='title', y='relational_profit', 
        kind='bar', grid=True, figsize=(10,6)))
-plt.show()
+#plt.show()
 
 mkrf_movies_support = mkrf_movies_support.sort_values(by='ratings', ascending=False)
 st.write(mkrf_movies_support[['title','balance','profit','relational_profit','ratings']].head(10).reset_index())
@@ -295,11 +295,11 @@ st.write(mkrf_movies_support[['title','balance','profit','relational_profit','ra
 (mkrf_movies_support[['title','ratings']].head(10).reset_index()
  .plot(title = 'Рейтинг фильмов', x='title', y='ratings', kind='bar',
        grid=True, figsize=(10,6)))
-plt.show()
+#plt.show()
 
 table = (mkrf_movies_support.pivot_table(values='fraction_support', index='show_start_date_year', aggfunc=[np.mean, np.median]))
 st.write(table)
 (table
  .plot(style='-o', grid=True, title='среднюю и медианную долю гос.поддержки фильмов за период 2010-2019 гг.', 
       figsize=(12,8)))
-plt.show()
+#plt.show()
