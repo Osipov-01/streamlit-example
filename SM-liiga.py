@@ -23,9 +23,9 @@ if uploaded_file is not None:
 #data1 = pd.read_excel(C:/Users/User/Desktop/SM-liiga/SM-liiga.xlsx'')
                                                                                              
 
-    st.table(data)
+    st.dataframe(data)
     print(data.columns)
-    st.table(data.columns)
+    #st.table(data.columns)
 
 choose_tur = ['Тур 1', 'Тур 2',
 'Тур 3', 'Тур 4', 'Тур 5', 'Тур 6', 'Тур 7', 'Тур 8', 'Тур 9', 'Тур 10', 'Тур 11','Тур 12','Тур 13',
