@@ -18,8 +18,8 @@ mkrf_shows_file = st.file_uploader("файл mkrf_shows")
 #mkrf_shows = files[1]
 
 if (mkrf_movies_file is not None) and (mkrf_shows_file is not None):
-    mkrf_movies = pd.read_csv(mkrf_movies_file, encoding="utf8", errors='ignore') 
-    mkrf_shows = pd.read_csv(mkrf_shows_file, encoding="utf8", errors='ignore') 
+    mkrf_movies = pd.read_csv(mkrf_movies_file, encoding="utf8") 
+    mkrf_shows = pd.read_csv(mkrf_shows_file, encoding="utf8") 
     print(mkrf_movies.info())
     print(mkrf_shows.info())
     st.write(mkrf_movies.head())
