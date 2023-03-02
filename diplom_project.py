@@ -8,3 +8,4 @@ df = pd.read_excel(file)
 print(df.head())
 
 st.table(df.head())
+st.write(df.isnull().sum())
