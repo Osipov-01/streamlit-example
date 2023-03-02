@@ -9,3 +9,5 @@ print(df.head())
 
 st.table(df.head())
 st.write(df.isnull().sum())
+
+st.write(df.shape)
