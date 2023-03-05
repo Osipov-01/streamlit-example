@@ -25,7 +25,7 @@ if uploaded_file is not None:
 #data1 = pd.read_excel(C:/Users/User/Desktop/SM-liiga/SM-liiga.xlsx'')
                                                                                              
 
-    st.write(data)
+    st.table(data)
     print(data.columns)
     #st.table(data.columns)
 
